@@ -56,8 +56,13 @@ void bubbleSort(int arr[], int n){
 }
 
 int main(){
-    int arr[] = {5, 4, 3, 2, 1};
-    int n = sizeof(arr)/sizeof(arr[0]);
+    int n;
+    scanf("%d", &n);
+    int arr[n];
+    for(int i=0; i<n; i++){
+        scanf("%d", &arr[i]);
+    }
+    
     selectionSort(arr, n);
     printArray(arr, n);
 
@@ -66,6 +71,6 @@ int main(){
 
     bubbleSort(arr, n);
     printArray(arr, n);
-    
+
     return 0;
 }
