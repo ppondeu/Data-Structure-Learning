@@ -44,5 +44,7 @@ int main(){
     int n = sizeof(arr)/sizeof(arr[0]);
     selectionSort(arr, n);
     printArray(arr, n);
+    insertionSort(arr, n);
+    printArray(arr, n);
     return 0;
 }
