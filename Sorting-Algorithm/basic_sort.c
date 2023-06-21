@@ -26,6 +26,18 @@ void selectionSort(int arr[], int n){
     }
 }
 
+int selectionSortV2(int arr[], int n){
+    for(int i = n-1 ; i >= 0 ; i--){
+        int max_idx = i;
+        for(int j = 0 ; j <= i ; j++ ){
+            if(arr[j] > arr[max_idx]){
+                max_idx = j;
+            }
+        }
+        swap(&arr[max_idx], &arr[i]);
+    }
+}
+
 void insertionSort(int arr[], int n){
     int key, j;
     for(int i=1; i<n; i++){
@@ -70,6 +82,9 @@ int main(){
     printArray(arr, n);
 
     bubbleSort(arr, n);
+    printArray(arr, n);
+
+    selectionSortV2(arr, n);
     printArray(arr, n);
 
     return 0;
