@@ -51,6 +51,18 @@ void insertionSort(int arr[], int n){
     }
 }
 
+void insertionSortV2(int arr[], int n){
+    for(int i = n-2 ; i >= 0 ; i--){
+        int temp = arr[i];
+        int j = i + 1;
+        while(j <= n && temp > arr[j]){
+            arr[j-1] = arr[j];
+            j = j +1;
+        }
+        arr[j-1] = temp;
+    }
+}
+
 void bubbleSort(int arr[], int n){
     int flag;
     for(int i=0; i<n-1; i++){
@@ -87,5 +99,7 @@ int main(){
     selectionSortV2(arr, n);
     printArray(arr, n);
 
+    insertionSortV2(arr, n);
+    printArray(arr, n);
     return 0;
 }
